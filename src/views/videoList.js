@@ -4,10 +4,10 @@ var VideoListView = Backbone.View.extend({
 
     this.render();
     console.log(this.$el);
-    
+    this.$el.find('.video-list').children().detach();
     this.collection.models.forEach(function(video) {
       var view = new VideoListEntryView({'model': video});
-      this.$el.append(view.$el);
+      this.$el.find('.video-list').append(view.$el);
     }.bind(this));
 
       
